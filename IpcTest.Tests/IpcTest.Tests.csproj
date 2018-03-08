@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B0FCF782-18A5-43D0-AC80-FFD4CFB37357}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IpcTest.Tests</RootNamespace>
+    <AssemblyName>IpcTest.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>IpcTest.Tests.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ComTests.cs" />
+    <Compile Include="EtwTests.cs" />
+    <Compile Include="FileTests.cs" />
+    <Compile Include="NamedPipeTests.cs" />
+    <Compile Include="ParameterizedTests.cs" />
+    <Compile Include="RemotingTests.cs" />
+    <Compile Include="ServicedComponentTests.cs" />
+    <Compile Include="SharedMemoryTests.cs" />
+    <Compile Include="SocketTests.cs" />
+    <Compile Include="CopyDataTests.cs" />
+    <Compile Include="MessageQueueTests.cs" />
+    <Compile Include="WcfTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IpcTest.Com.Client\IpcTest.Com.Client.csproj">
+      <Project>{bd57a6ec-c6c0-4094-a3ec-8df5e8d84310}</Project>
+      <Name>IpcTest.Com.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IpcTest.Com.Server\IpcTest.Com.Server.csproj">
+      <Project>{0e1eb22d-7de5-4070-8835-8689330c02a9}</Project>
+      <Name>IpcTest.Com.Server</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IpcTest.Common\IpcTest.Common.csproj">
+      <Project>{837f89fa-3135-4d81-8172-7a68491b31a7}</Project>
+      <Name>IpcTest.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IpcTest.CopyData.Client\IpcTest.CopyData.Client.csproj">
+      <Project>{c8dfbff1-2652-4bb0-9b3d-7eb8d83ea0ec}</Project>
+      <Name>IpcTest.CopyData.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IpcTest.CopyData.Server\IpcTest.CopyData.Server.csproj">
+      <Project>{778407e8-c086-461a-b54b-d6da07b6f123}</Project>
+      <Name>IpcTest.CopyData.Server</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IpcTest.Etw.Client\IpcTest.Etw.Client.csproj">
+      <Project>{b2cc70a1-ef08-4a66-8c45-deb9c62b3886}</Project>
+      <Name>IpcTest.Etw.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IpcTest.Etw.Server\IpcTest.Etw.Server.csproj">
+      <Project>{abc2a123-e575-45cd-847b-ff5ff1d3b036}</Project>
+      <Name>IpcTest.Etw.Server</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IpcTest.File.Client\IpcTest.File.Client.csproj">
+      <Project>{77120458-93de-4e3a-9e7f-dd7b01ccb689}</Project>
+      <Name>IpcTest.File.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IpcTest.File.Server\IpcTest.File.Server.csproj">
+      <Project>{99e8b34f-34c0-4672-bdfe-2b4c2136cf1f}</Project>
+      <Name>IpcTest.File.Server</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IpcTest.MessageQueue.Client\IpcTest.MessageQueue.Client.csproj">
+      <Project>{86ae4742-a04b-4ab7-b723-fe1890ab7ba3}</Project>
+      <Name>IpcTest.MessageQueue.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IpcTest.MessageQueue.Server\IpcTest.MessageQueue.Server.csproj">
+      <Project>{ff85d76b-9ee8-410f-a92e-90093a721816}</Project>
+      <Name>IpcTest.MessageQueue.Server</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IpcTest.NamedPipe.Client\IpcTest.NamedPipe.Client.csproj">
+      <Project>{4db162ca-a4ea-4e57-8c8b-857b49279619}</Project>
+      <Name>IpcTest.NamedPipe.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IpcTest.NamedPipe.Server\IpcTest.NamedPipe.Server.csproj">
+      <Project>{9849cd77-3ae3-47e8-87b6-47c0769cc954}</Project>
+      <Name>IpcTest.NamedPipe.Server</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IpcTest.Remoting.Client\IpcTest.Remoting.Client.csproj">
+      <Project>{6f2d94df-68a5-48b6-969a-b6c998c86c1b}</Project>
+      <Name>IpcTest.Remoting.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IpcTest.Remoting.Server\IpcTest.Remoting.Server.csproj">
+      <Project>{0d565114-2aa0-4ba6-b58b-94e90ab89b79}</Project>
+      <Name>IpcTest.Remoting.Server</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IpcTest.ServicedComponent.Client\IpcTest.ServicedComponent.Client.csproj">
+      <Project>{a2866aff-a889-4e71-aef4-e9b219fcee57}</Project>
+      <Name>IpcTest.ServicedComponent.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IpcTest.ServicedComponent.Server\IpcTest.ServicedComponent.Server.csproj">
+      <Project>{89b901b6-4e48-4b22-ad93-b6da2c6bd24a}</Project>
+      <Name>IpcTest.ServicedComponent.Server</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IpcTest.SharedMemory.Client\IpcTest.SharedMemory.Client.csproj">
+      <Project>{cbdcc7ae-e186-48fd-a270-9b9c692508ce}</Project>
+      <Name>IpcTest.SharedMemory.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IpcTest.SharedMemory.Server\IpcTest.SharedMemory.Server.csproj">
+      <Project>{9981faa0-27ff-460c-b19c-2a8491001a4b}</Project>
+      <Name>IpcTest.SharedMemory.Server</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IpcTest.Socket.Client\IpcTest.Socket.Client.csproj">
+      <Project>{3839efe3-6fbb-443f-8e5b-aba9aafc985c}</Project>
+      <Name>IpcTest.Socket.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IpcTest.Socket.Server\IpcTest.Socket.Server.csproj">
+      <Project>{db58835c-a16b-4c9d-97ab-b7acb857cc43}</Project>
+      <Name>IpcTest.Socket.Server</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IpcTest.Wcf.Client\IpcTest.Wcf.Client.csproj">
+      <Project>{42028b73-6129-48f6-9bdc-8142cc623738}</Project>
+      <Name>IpcTest.Wcf.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IpcTest.Wcf.Server\IpcTest.Wcf.Server.csproj">
+      <Project>{196348d1-6223-4f81-904f-5b49d0e83bbf}</Project>
+      <Name>IpcTest.Wcf.Server</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IpcTest.Tests.snk" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
